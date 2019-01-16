@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    background-color: red;
+    color: black;
+    align-content: space-between;
+}
+
+.container {
+    margin: 10px;
+}
+
+.links-list li {
+    text-decoration: none;
+}
+
+footer {
+    bottom: 0px;
+    position: fixed;
+}
+
+span {
+    text-align: center;
+}

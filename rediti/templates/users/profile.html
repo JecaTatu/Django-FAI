@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+dale boy
+
+username: {{ user.username }}
+email: {{ user.email }}
+karma: {{ user.karma }}
+avatar: <img src="{{ user.avatar.url}}">
+{% endblock %}
