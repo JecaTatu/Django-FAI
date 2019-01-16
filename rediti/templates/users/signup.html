@@ -1,6 +1,7 @@
+
 {% extends 'base.html' %}
 {% block body %}
-<form class="auth-form" method="post">
+<form class='auth-form' method="post">
     {% csrf_token %}
     <fieldset>
         {{ form.non_field_errors }} {% for field in form %}
@@ -8,8 +9,8 @@
             {{ field.label_tag }} {{ field }} {{ field.errors }}
         </div>
         {% endfor %}
-        <button type="submit">Login</button>
+        <button type="submit">Sign up</button>
     </fieldset>
-    <a href="{% url 'users:signup' %}">Não tem uma conta? Crie uma aqui :)</a>
+    <a href="{% url 'users:login' %}">Já tem uma conta? Log in!</a>
 </form>
 {% endblock %}
