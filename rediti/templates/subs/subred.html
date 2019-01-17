@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+<span>Subs</span>
+<div id="container">
+    {% for subred in subreds %}
+    <div class=>
+        <div>
+            <h4><a href="{% url 'subs:subreds' subred.slug %}">{{ subred.title }}</a></h4>
+            <div>{{ subred.description }}</div>
+        </div>
+    </div>
+    {% empty %}
+    galera não sabe escrever
+    {% endfor %}
+</div>
+{% endblock body %}

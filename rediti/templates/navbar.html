@@ -9,16 +9,18 @@
             <a href="{% url 'users:profile' user.pk %}">
                 <li>Profile</li>
             </a>
-            {% else %}
-            <li>vai logar vagabundo</li>
-            {% endif %}
             <a href="{% url 'users:logout' %}">
                 <li>Logout</li>
             </a>
+            {% else %}
+            <li>vai logar vagabundo</li>
             <a href="{% url 'users:login' %}">
-                    <li>Login</li>
+                <li>Login</li>
+            </a>
+            {% endif %}
+            <a href="{% url 'subs:subred' %}">
+                <li>Subs</li>
             </a>
         </ul>
     </div>
 </div>
-bloc

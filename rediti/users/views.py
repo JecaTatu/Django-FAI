@@ -38,7 +38,7 @@ class SignupView(generic.FormView):
             return HttpResponseRedirect(reverse_lazy('common:home'))
         return super(SignupView, self).get(request)
 
-    def form_valide(self, form):
+    def form_valid(self, form):
         self.object = form.save()
         user = authenticate(username=self.object.email, password=form.cleaned_data['password'])
         auth.login(self.request, user)

@@ -2,9 +2,53 @@
 
 {% block body %}
 dale boy
+<div id="user">
 
-username: {{ user.username }}
-email: {{ user.email }}
-karma: {{ user.karma }}
-avatar: <img src="{{ user.avatar.url}}">
+    <p>username: {{ user.username }}</p>
+    <p>email: {{ user.email }}</p>
+    <p>karma: {{ user.karma }}</p>
+    <p>avatar:</p> <img src="{{ user.avatar.url}}">
+</div>
+
+<div id="thread">
+    <span>
+        <h2>Threads</h2>
+    </span>
+
+    {% for thread in user.threads.all %}
+    <div id="thread">
+        <div id="karma"> {{ thread.vote_count }}</div>
+        <span>{{ thread.title }}</span>
+        by <a href="{% url 'users:profile' thread.author.pk %}">
+            {{ thread.author }}
+        </a> in
+        <a href="">{{ thread.subrediti }}</a>
+        <div>{{ post.content}}</div>
+    </div>
+    {% empty %}
+    O carinha n sabe digitar
+    {% endfor %}
+</div>
+
+</div>
+
+<div id="Posts">
+    <span>
+        <h2>Posts</h2>
+    </span>
+    {% for post in user.posts.all %}
+    <div id="thread">
+        <div id="karma"> {{ posts.vote_count }}</div>
+        <span>{{ posts.title }}</span>
+        by <a href="{% url 'users:profile' posts.author.pk %}">
+            {{ posts.author }}
+        </a> in
+        <a href="">{{ posts.subrediti }}</a>
+        <div>{{ post.content}}</div>
+    </div>
+    {% empty %}
+    O carinha n sabe digitar
+    {% endfor %}
+
+</div>
 {% endblock %}

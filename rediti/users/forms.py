@@ -13,7 +13,7 @@ class UserForm(forms.ModelForm):
     def clean(self):
         cleaned_data = super(UserForm, self).clean()
         password = cleaned_data.get('password')
-        confirm_password = cleaned.data.get('confirm_password')
+        confirm_password = cleaned_data.get('confirm_password')
 
         if password != confirm_password:
             raise forms.ValidationError(
@@ -24,4 +24,5 @@ class UserForm(forms.ModelForm):
         raw_password = self.cleaned_data.get('password')
         self.instance.username = self.cleaned_data.get('username')
         self.instance.set_password(raw_password)
+        self.instance.save()
         return self.instance

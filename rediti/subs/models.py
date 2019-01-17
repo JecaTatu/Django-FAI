@@ -4,7 +4,7 @@ from common.models import IndexedTimeStampedModel
 
 class Subred(models.Model):
     title = models.CharField(max_length=50)
-    creator = models.ForeignKey("users.User", related_name="Subreds", on_delete=models.CASCADE)
+    creator = models.ForeignKey("users.User", related_name="subreds", on_delete=models.CASCADE)
     description = models.TextField()
     slug = models.SlugField()
 
@@ -15,7 +15,7 @@ class Subred(models.Model):
 class Thread(IndexedTimeStampedModel):
     title = models.CharField(max_length=50)
     author = models.ForeignKey("users.User", related_name="threads", on_delete=models.CASCADE)
-    Subred = models.ForeignKey('Subred', related_name="threads", on_delete=models.CASCADE)
+    subred = models.ForeignKey('Subred', related_name="threads", on_delete=models.CASCADE)
     vote_count = models.IntegerField(default=0)
 
     class Meta:

@@ -1,8 +1,12 @@
 .navbar {
     display: flex;
-    background-color: red;
+    background-color: rgb(211, 253, 114);
     color: black;
     align-content: space-between;
+}
+
+body {
+    margin: 0px;
 }
 
 .container {
@@ -13,9 +17,12 @@
     text-decoration: none;
 }
 
+#user {
+    text-align: center;
+}
+
 footer {
     bottom: 0px;
-    position: fixed;
 }
 
 span {
